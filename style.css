@@ -1,0 +1,446 @@
+/*
+ * Style sheet for the RideEasy landing page.
+ * The design uses a modern colour palette and clean typography.
+ */
+
+/* Root variables for easy theming */
+:root {
+  --primary-color: #ff6f00; /* vibrant orange accent */
+  --secondary-color: #1e2235; /* dark blue/gray for backgrounds */
+  --light-bg: #f7f7f9; /* light section background */
+  --text-color: #333;
+  --max-width: 1100px;
+}
+
+/* Global styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0.5rem 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(135deg, var(--secondary-color) 20%, #2c335b 80%);
+  color: #fff;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero content */
+.hero-content {
+  text-align: center;
+  margin: auto;
+  padding: 0 5%;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #e65a00;
+}
+
+/* Generic section styles */
+section {
+  padding: 4rem 5%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+section:nth-of-type(odd) {
+  background-color: var(--light-bg);
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+/* Services section */
+.services .service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.services .card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 calc(25% - 1rem);
+  min-width: 220px;
+  padding: 2rem 1.5rem;
+  text-align: left;
+}
+
+.services .card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Category grid */
+.categories .category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.categories .category {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.categories .category h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Custom section */
+.custom p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.custom .steps {
+  list-style: decimal inside;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  line-height: 1.6;
+}
+
+.custom .steps li {
+  margin-bottom: 0.8rem;
+}
+
+/* Contact section */
+.contact p {
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 0.8rem 1.6rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e65a00;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--secondary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 5%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .services .service-cards {
+    flex-direction: column;
+  }
+  .services .card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Shop section */
+.shop {
+  background-color: var(--light-bg);
+}
+.shop p {
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+}
+.cart-summary {
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+.shop-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.product-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  flex: 1 1 calc(33.333% - 1.5rem);
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.product-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+/* Placeholder gradients for product images */
+.product-img-1 {
+  background-image: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+}
+.product-img-2 {
+  background-image: linear-gradient(135deg, #536976, #292e49);
+}
+.product-img-3 {
+  background-image: linear-gradient(135deg, #c04848, #480048);
+}
+.price {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+.add-to-cart {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.add-to-cart:hover {
+  background-color: #e65a00;
+}
+
+/* Gallery section */
+.gallery {
+  background-color: #ffffff;
+}
+.gallery p {
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 6px;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  color: #fff;
+  overflow: hidden;
+}
+.gallery-label {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+/* Gradient backgrounds for gallery items */
+.gallery-desert {
+  background-image: linear-gradient(135deg, #f2994a, #f2c94c);
+}
+.gallery-mountain {
+  background-image: linear-gradient(135deg, #6dd5ed, #2193b0);
+}
+.gallery-coast {
+  background-image: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+.gallery-city {
+  background-image: linear-gradient(135deg, #b24592, #f15f79);
+}
+
+/* Schedule / Calendar & Map section */
+.schedule {
+  background-color: var(--light-bg);
+}
+.schedule-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.calendar, .map-placeholder {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+.calendar label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+.calendar input[type="date"] {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.calendar button {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.calendar button:hover {
+  background-color: #e65a00;
+}
+.calendar #date-result {
+  margin-top: 1rem;
+  font-style: italic;
+}
+.map-placeholder h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+.map-box {
+  width: 100%;
+  height: 220px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+  .shop-items {
+    flex-direction: column;
+  }
+  .product-card {
+    flex: 1 1 100%;
+  }
+  .schedule-container {
+    flex-direction: column;
+  }
+  .calendar, .map-placeholder {
+    flex: 1 1 100%;
+  }
+}
