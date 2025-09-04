@@ -22,6 +22,15 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Weather widget at top */
+.weather-widget {
+  background-color: #c12023;
+  color: #fff;
+  text-align: center;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -43,16 +52,24 @@ img {
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #c12023;
+  color: #e74c3c; /* Bold red accent for adventure feel */
 }
 
+/* Nav links container: hidden by default. The menu appears when the toggle button is clicked. */
 .nav-links {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  /* Hidden on mobile until toggled. On desktop this is reset via media query */
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* When the navigation menu is toggled open, show the links */
+.nav-links.active {
+  display: flex;
 }
 
 .nav-links li a {
@@ -63,12 +80,93 @@ img {
 }
 
 .nav-links li a:hover {
-  color: #c12023;
+  color: #e74c3c;
 }
 
-/* Add left margin between consecutive navigation items */
+/* Desktop navigation styles: when the viewport is wider than 768px we lay the nav horizontally
+   and hide the hamburger toggle. */
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    margin-left: auto;
+  }
+  .nav-links li {
+    position: relative;
+  }
+  .nav-links li + li {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+  /* Hide dropdown items until hovered */
+  .dropdown-menu {
+    display: none;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  min-width: 180px;
+  z-index: 500;
+}
+
+/* Show dropdown-menu when active class toggled via script */
+.dropdown-menu.active {
+  display: block;
+}
+.dropdown-menu li a {
+  color: #333;
+  padding: 0.5rem 1rem;
+  display: block;
+  white-space: nowrap;
+}
+.dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+  color: #c12023;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Navigation toggle button */
+/* Always visible. Clicking it toggles the menu open/close */
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Spacing between consecutive nav items */
 .nav-links li + li {
-  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
 
 /* Hero */
@@ -99,7 +197,7 @@ img {
 .cta-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #c12023;
+  background-color: #e74c3c;
   color: #fff;
   border-radius: 4px;
   text-decoration: none;
@@ -108,7 +206,7 @@ img {
 }
 
 .cta-button:hover {
-  background-color: #a0171c;
+  background-color: #c0392b;
 }
 
 /* Section generic styling */
@@ -281,6 +379,15 @@ section h2 {
   justify-content: space-between;
 }
 
+/* Coming soon cards display a lighter background and italic price */
+.product-card.coming-soon {
+  opacity: 0.85;
+}
+.product-card.coming-soon .price {
+  font-style: italic;
+  color: #555;
+}
+
 .product-image {
   height: 140px;
   background-size: cover;
@@ -299,19 +406,121 @@ section h2 {
   font-weight: 600;
 }
 
-.add-to-cart {
+/* Button group container for learn and availability buttons */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 1rem 1.5rem;
-  padding: 0.5rem;
-  border: none;
-  background-color: #c12023;
+  gap: 0.5rem;
+}
+
+/* Learn More button */
+.learn-btn {
+  flex: 1;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #444;
   color: #fff;
   border-radius: 4px;
-  cursor: pointer;
   font-weight: 600;
+  text-align: center;
+  text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
-.add-to-cart:hover {
+.learn-btn:hover {
+  background-color: #333;
+}
+
+/* Adjust the existing check button when placed inside a button group */
+.btn-group .check-btn {
+  flex: 1;
+  margin: 0;
+}
+
+/* Bike detail page styles */
+.bike-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fff;
+}
+
+.bike-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #c12023;
+}
+
+.bike-hero p {
+  margin: 0 auto 1rem;
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.bike-hero-image {
+  height: 230px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+}
+
+.bike-details {
+  background-color: #f9f9f9;
+  padding: 2rem 1rem;
+}
+
+.bike-details section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bike-details h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #c12023;
+}
+
+.bike-details p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Bike hero background images reuse existing product assets and gradients */
+.bike-img-1 { background-image: url('../assets/product1.png'); }
+.bike-img-2 { background-image: url('../assets/product2.png'); }
+.bike-img-3 { background-image: url('../assets/product3.png'); }
+.bike-img-4 { background-image: url('../assets/product4.png'); }
+.bike-img-5 { background: linear-gradient(135deg, #111 0%, #444 50%, #000 100%); }
+.bike-img-6 { background-image: url('../assets/product6.png'); }
+.bike-img-7 { background: linear-gradient(135deg, #000 0%, #333 50%, #111 100%); }
+.bike-img-8 { background-image: url('../assets/product8.png'); }
+.bike-img-9 { background-image: url('../assets/product9.png'); }
+.bike-img-10 { background: linear-gradient(135deg, #006400 0%, #228B22 50%, #013220 100%); }
+.bike-img-11 { background: linear-gradient(135deg, #0e1e40 0%, #1f3c88 50%, #0a1931 100%); }
+.bike-img-12 { background: linear-gradient(135deg, #7B1E1E 0%, #c12023 50%, #a6171b 100%); }
+.bike-img-13 { background: linear-gradient(135deg, #3d3d3d 0%, #666 50%, #2a2a2a 100%); }
+
+/* Button link for checking availability */
+.check-btn {
+  display: inline-block;
+  margin: 0 1rem 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #c12023;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.check-btn:hover {
   background-color: #a0171c;
 }
 
@@ -337,11 +546,62 @@ section h2 {
 .product-img-11 {
   background: linear-gradient(135deg, #0e1e40 0%, #1f3c88 50%, #0a1931 100%);
 }
+
+/* Gradient backgrounds for remaining bikes */
+.product-img-12 {
+  background: linear-gradient(135deg, #7B1E1E 0%, #c12023 50%, #a6171b 100%);
+}
+
+.product-img-13 {
+  background: linear-gradient(135deg, #3d3d3d 0%, #666 50%, #2a2a2a 100%);
+}
 .product-img-12 {
   background: linear-gradient(135deg, #4b2e0f 0%, #8c4a1c 50%, #331a06 100%);
 }
 .product-img-13 {
   background: linear-gradient(135deg, #4d4d4d 0%, #8a8a8a 50%, #333333 100%);
+}
+
+/* Group events section styles */
+.groups {
+  background-color: #fff;
+  text-align: center;
+}
+.group-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  text-align: left;
+}
+.group-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* Past trips section styles */
+.past-trips {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.past-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 1.5rem auto;
+}
+.past-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.past-item h3 {
+  color: #c12023;
+  margin-top: 0;
+}
+.past-item p {
+  margin: 0.5rem 0 0;
 }
 
 /* Gallery */
@@ -489,6 +749,81 @@ section h2 {
   text-align: center;
 }
 
+/* Group events section */
+.groups {
+  background-color: #fff7f7;
+}
+.group-list {
+  list-style: none;
+  padding: 0;
+}
+.group-list li {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+/* Past trips section */
+.past-trips {
+  background-color: #f6f9ff;
+}
+.past-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.past-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Merchandise section */
+.merch {
+  background-color: #ffffff;
+}
+.merch-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.merch-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.merch-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.buy-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+.buy-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Coming soon label style */
+.coming-soon .price {
+  color: #c12023;
+  font-style: italic;
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -582,6 +917,81 @@ section h2 {
   color: #a0171c;
 }
 
+/* Cart indicator style */
+.cart-indicator {
+  font-size: 1rem;
+  color: #c12023;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.cart-indicator #cart-count {
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+/* Coming soon products */
+.coming-soon .price {
+  color: #888;
+  font-style: italic;
+}
+
+/* Merchandise section */
+.merch {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.merch-card {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+.merch-card:hover {
+  transform: translateY(-4px);
+}
+.merch-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+.merch-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+.merch-card .price {
+  font-weight: 600;
+  color: #c12023;
+  margin-bottom: 0.5rem;
+}
+.merch-card button.add-to-cart {
+  background-color: #c12023;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.merch-card button.add-to-cart:hover {
+  background-color: #a6171b;
+}
+
 /* Footer */
 .footer {
   background-color: #333;
@@ -589,4 +999,180 @@ section h2 {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+/* News & Updates */
+.news {
+  background-color: #fff;
+  text-align: center;
+}
+
+.news-list {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.news-list article {
+  background: #f7f7f7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.news-list article h3 {
+  margin-top: 0;
+  color: #c12023;
+}
+
+.news-list article small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+/* Media section */
+.media {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.media-item {
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+/* Placeholder media backgrounds */
+/* Social-specific backgrounds */
+.media-facebook {
+  background: linear-gradient(135deg, #3b5998 0%, #8b9dc3 100%);
+}
+.media-instagram {
+  background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
+}
+.media-google {
+  background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+}
+
+/* Overlay label on media items */
+.media-item span {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(0,0,0,0.5);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  /* Stack the navbar items and show a toggle button */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+  }
+
+  /* show the hamburger icon on small screens */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    /* hide links until the toggle is pressed */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links li + li {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  /* Note: nav-links.active is defined globally; no additional rules needed here */
+
+  .hero {
+    height: auto;
+    padding: 4rem 1rem;
+    background-position: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Single-column grids for small screens */
+  .service-cards,
+  .category-grid,
+  .shop-items,
+  .testimonials-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cart summary is removed for mobile */
+
+  /* Adjust schedule layout */
+  .schedule-container {
+    flex-direction: column;
+  }
+  .map-placeholder {
+    margin-top: 1.5rem;
+  }
+
+  /* Contact form adjustments */
+  .contact-form {
+    padding: 0 1rem;
+  }
+}
+
+/* Desktop navigation styling */
+@media (min-width: 769px) {
+  /* Show nav links horizontally on wider screens */
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+  .nav-links li + li {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+  /* Hide hamburger icon on desktop */
+  .nav-toggle {
+    display: none;
+  }
+  .dropdown-menu {
+    margin-top: 0.5rem;
+  }
+  .dropdown-menu li + li {
+    margin-left: 0;
+  }
 }

@@ -6,15 +6,25 @@
 // service.
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Cart functionality
-  const cartCountElem = document.getElementById('cart-count');
-  let cartCount = 0;
-  const addButtons = document.querySelectorAll('.add-to-cart');
+  // Mobile nav toggle functionality
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
 
-  addButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      cartCount += 1;
-      cartCountElem.textContent = cartCount;
+  // Language selector toggle on click (especially for mobile)
+  const langSelectors = document.querySelectorAll('.language-selector > a');
+  langSelectors.forEach(langLink => {
+    langLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = langLink.parentElement;
+      const menu = parent.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.classList.toggle('active');
+      }
     });
   });
 
@@ -45,13 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
       resultDiv.textContent = message;
       resultDiv.style.color = '#333';
 
-      // Build a mailto link to prefill an email to the company
-      const subject = `RideEasy booking request: ${model}`;
-      const body = `Hello RideEasy team,%0D%0A%0D%0AI would like to book the ${model} from ${startDate} to ${endDate}.%0D%0AMy contact email is ${email}.%0D%0A%0D%0AThank you!`;
-      const mailtoLink = `mailto:info@ride-easy.rent?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-      // Open the mail client in a new window so the user can send the request
-      window.open(mailtoLink, '_blank');
+      // Note: The contact form at the bottom of the page sends email via formsubmit.co.
+      // We no longer open the mail client here. The summary above confirms that your request was recorded.
     });
   }
+
+  // Merchandise cart functionality
+  let cartCount = 0;
+  const cartCountSpan = document.getElementById('cart-count');
+  const addToCartButtons = document.querySelectorAll('button.add-to-cart');
+
+  addToCartButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      cartCount += 1;
+      if (cartCountSpan) {
+        cartCountSpan.textContent = cartCount;
+      }
+      // Provide simple feedback to user
+      btn.textContent = 'Added!';
+      setTimeout(() => {
+        btn.textContent = 'Add to Cart';
+      }, 1500);
+    });
+  });
 });

@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RideEasy – Your Adventure Starts Here</title>
+  <title>Ride‑Easy.rent – Motorcycle Rentals & Tours in Spain & Morocco</title>
+  <!-- SEO meta tags -->
+  <meta name="description" content="Ride‑Easy.rent is your gateway to premium motorcycle rentals, guided tours and epic group events across Spain, Portugal and Morocco. With a top‑notch fleet, competitive offers and expert support, we make your dream ride a reality – from Andalusia getaways to Sahara expeditions.">
+  <meta name="keywords" content="motorcycle rental, Malaga, Spain, Morocco tours, Andalusia trips, group motorcycle events, adventure bikes, premium fleet, BMW, Ducati, KTM, Triumph, Yamaha, guided rides, multi‑day expeditions">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Weather widget -->
+  <div class="weather-widget">
+    Málaga: 25°C Sunny
+  </div>
   <!-- Hero -->
   <header class="hero">
     <nav class="navbar">
-      <div class="logo">RideEasy</div>
-      <ul class="nav-links">
+      <div class="logo">Ride‑Easy.rent</div>
+      <!-- Cart indicator for merch items -->
+      <div class="cart-indicator">🛒 <span id="cart-count">0</span></div>
+      <!-- Hamburger icon for mobile navigation -->
+      <button class="nav-toggle" id="nav-toggle">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#operation">Our Base</a></li>
         <li><a href="#services">Why Us</a></li>
@@ -20,15 +31,35 @@
         <li><a href="#categories">Adventures</a></li>
         <li><a href="#custom">Customize</a></li>
         <li><a href="#shop">Bikes</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="shop.html">Merch&nbsp;Store</a></li>
+        <!-- Dropdown menu for secondary pages -->
+        <li class="dropdown"><a href="#">More ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#news">News</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#groups">Group Events</a></li>
+            <li><a href="#past-trips">Past Trips</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </li>
+        <!-- Language selector -->
+        <li class="dropdown language-selector"><a href="#">EN ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/index.html">EN</a></li>
+            <li><a href="/pl/index.html">PL</a></li>
+            <li><a href="/es/index.html">ES</a></li>
+            <li><a href="/it/index.html">IT</a></li>
+            <li><a href="/de/index.html">DE</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <div class="hero-content">
-      <h1>Explore Beyond Boundaries</h1>
-      <p>Discover a world of thrilling motorcycle adventures with RideEasy Co. Top‑notch bikes for every journey.</p>
+      <h1>Ride Boldly, Live Free</h1>
+      <p>Fuel your adventurous spirit with epic journeys across Spain and Morocco. Our world‑class fleet is ready—join our group expeditions or carve your own path on the open road.</p>
       <a class="cta-button" href="#shop">Browse Our Bikes</a>
     </div>
   </header>
@@ -36,8 +67,27 @@
   <!-- About -->
   <section id="about" class="about">
     <h2>Your Adventure Starts Here</h2>
-    <p>RideEasy is your trusted motorcycle rental company offering top‑notch rides and services. We provide tailored itineraries and personalized experiences – tours crafted to your unique taste, ensuring each trip is as individual as you are.</p>
+    <p>Ride Easy is your trusted motorcycle rental company offering top‑notch rides and services. We provide tailored itineraries and personalized experiences – tours crafted to your unique taste, ensuring each trip is as individual as you are.</p>
   </section>
+
+  <!-- News & Updates -->
+  <section id="news" class="news">
+    <h2>News & Updates</h2>
+    <p>Stay in the loop with our latest announcements and ride reports. Edit this section directly in the HTML file to add or update items.</p>
+    <div class="news-list">
+      <article>
+        <h3>Sample News Title</h3>
+        <p>This is a placeholder for your first news item. Replace this text with your own update about recent tours, new bikes or special offers.</p>
+        <small>January 1, 2025</small>
+      </article>
+      <article>
+        <h3>Another Headline</h3>
+        <p>Use this section to keep your riders informed. You can add as many articles as you like—just follow the same structure.</p>
+        <small>December 15, 2024</small>
+      </article>
+    </div>
+  </section>
+
 
   <!-- Operation -->
   <section id="operation" class="operation">
@@ -63,20 +113,20 @@
     <h2>Why Ride with Us?</h2>
     <div class="service-cards">
       <div class="card">
-        <h3>Wide Selection</h3>
-        <p>Choose from an extensive fleet of motorcycles to match your style – from sporty adventure bikes to classic cruisers.</p>
+        <h3>Premium Fleet & Coverage</h3>
+        <p>Our fleet includes the latest models from BMW, Ducati, KTM, Triumph, Yamaha and more. We have pick‑up and drop‑off points across Málaga, Torremolinos and the Andalusia region for seamless travel.</p>
       </div>
       <div class="card">
-        <h3>Affordable Pricing</h3>
-        <p>We offer competitive pricing and flexible rental durations, ensuring your ride stays within budget.</p>
+        <h3>Competitive Offers</h3>
+        <p>Enjoy fair prices, seasonal discounts and customised packages for short getaways or long expeditions. Pay only 20% upfront with free cancellation until your trip begins.</p>
       </div>
       <div class="card">
-        <h3>Exceptional Service</h3>
-        <p>Our experienced team provides 24/7 support, safety orientation and insider tips so you can ride with confidence.</p>
+        <h3>Expert Support</h3>
+        <p>From route planning to gear recommendations, our multilingual team provides assistance before and during your ride. We’re motorbike enthusiasts too, and we’ll make sure everything runs smoothly.</p>
       </div>
       <div class="card">
         <h3>Safety First</h3>
-        <p>Your safety is our priority. All bikes undergo regular maintenance and we supply helmets and gear for a worry‑free journey.</p>
+        <p>Your well‑being is our priority. We regularly service our bikes and provide helmets, protective gear and thorough briefing sessions.</p>
       </div>
     </div>
   </section>
@@ -118,6 +168,38 @@
     </div>
   </section>
 
+  <!-- Group Events -->
+  <section id="groups" class="groups">
+    <h2>Group Events & Epic Rides</h2>
+    <p>From stag weekends and corporate retreats to friends celebrating milestones, we love organising large‑group rides. Let our team handle the logistics while you enjoy the open road together.</p>
+    <ul class="group-list">
+      <li><strong>Tailor‑Made Experiences:</strong> We design multi‑bike itineraries based on your group’s preferences and skill levels.</li>
+      <li><strong>Support Crew:</strong> On bigger trips our support vehicle carries luggage, tools and refreshments so you can focus on riding.</li>
+      <li><strong>Epic Destinations:</strong> Choose from popular group routes like Mallorca, Sicily, Scotland, Portugal, Gibraltar or venture to the legendary Dakar.</li>
+      <li><strong>Flexible Options:</strong> Add accommodation, catered meals and cultural activities to make your journey truly unforgettable.</li>
+    </ul>
+  </section>
+
+  <!-- Past Trips -->
+  <section id="past-trips" class="past-trips">
+    <h2>Past Trips</h2>
+    <p>Need inspiration? Here are highlights from some of our favourite adventures. We’ll update this section with photos and stories as you share yours! Contact us if you’d like your trip featured.</p>
+    <div class="past-grid">
+      <div class="past-item">
+        <h3>Mallorca Magic</h3>
+        <p>Riders soaked up sun‑drenched coastal roads and twisty mountain passes. A perfect blend of relaxation and adrenaline.</p>
+      </div>
+      <div class="past-item">
+        <h3>Sicily to Etna</h3>
+        <p>A thrilling tour through ancient villages and volcanic landscapes. Participants tasted local delicacies and conquered Mount Etna.</p>
+      </div>
+      <div class="past-item">
+        <h3>Morocco Desert Run</h3>
+        <p>Dunes, kasbahs and starry nights. This multi‑day expedition showcased the raw beauty of the Sahara and the warmth of Berber hospitality.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Custom trip builder -->
   <section id="custom" class="custom">
     <h2>Build Your Own Trip</h2>
@@ -131,93 +213,267 @@
   </section>
 
   <!-- Shop / Bikes -->
-  <section id="shop" class="shop">
+    <section id="shop" class="shop">
     <h2>Our Bikes</h2>
-    <p>Browse our fleet and select your perfect ride. Each card below represents an available motorcycle. Colours indicate category only – you can replace the images with your own photos.</p>
-    <div class="cart-summary">Cart Items: <span id="cart-count">0</span></div>
+    <p>Browse our fleet and select your perfect ride. Each card below shows the actual motorcycle you can rent; we’ve included real photos to help you choose.</p>
     <div class="shop-items">
       <!-- Ducati -->
       <div class="product-card">
-        <div class="product-image product-img-1"></div>
+        <img src="assets/bikes/ducati_multistrada_v4s.jpg" alt="Ducati Multistrada V4S Full" class="product-image">
         <h3>Ducati Multistrada V4S Full</h3>
         <p class="price">€150/day</p>
-        <button class="add-to-cart" data-name="Ducati Multistrada V4S Full">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/ducati-multistrada-v4s-full.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-2"></div>
+        <img src="assets/bikes/ducati_multistrada_v4s.jpg" alt="Ducati Multistrada V4S Travel Radar" class="product-image">
         <h3>Ducati Multistrada V4S Travel Radar</h3>
         <p class="price">€155/day</p>
-        <button class="add-to-cart" data-name="Ducati Multistrada V4S Travel Radar">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/ducati-multistrada-v4s-travel-radar.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <!-- BMWs -->
       <div class="product-card">
-        <div class="product-image product-img-3"></div>
+        <img src="assets/bikes/bmw_r1250gs.jpg" alt="BMW R1250GS Adventure" class="product-image">
         <h3>BMW R1250GS Adventure</h3>
         <p class="price">€140/day</p>
-        <button class="add-to-cart" data-name="BMW R1250GS Adventure">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/bmw-r1250gs-adventure.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-4"></div>
+        <img src="assets/bikes/bmw_r1300gs_trophy.jpg" alt="BMW R1300GS Trophy" class="product-image">
         <h3>BMW R1300GS Trophy</h3>
         <p class="price">€160/day</p>
-        <button class="add-to-cart" data-name="BMW R1300GS Trophy">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/bmw-r1300gs-trophy.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-5"></div>
+        <img src="assets/bikes/bmw_r1300gs.jpg" alt="BMW R1300GS Triple Black" class="product-image">
         <h3>BMW R1300GS Triple Black</h3>
         <p class="price">€160/day</p>
-        <button class="add-to-cart" data-name="BMW R1300GS Triple Black">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/bmw-r1300gs-triple-black.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-6"></div>
+        <img src="assets/bikes/bmw_r1300gs.jpg" alt="BMW R1300GS Adventure Trophy" class="product-image">
         <h3>BMW R1300GS Adventure Trophy</h3>
         <p class="price">€170/day</p>
-        <button class="add-to-cart" data-name="BMW R1300GS Adventure Trophy">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/bmw-r1300gs-adventure-trophy.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-7"></div>
+        <img src="assets/bikes/bmw_r1300gs.jpg" alt="BMW R1300GS Adventure Triple Black" class="product-image">
         <h3>BMW R1300GS Adventure Triple Black</h3>
         <p class="price">€170/day</p>
-        <button class="add-to-cart" data-name="BMW R1300GS Adventure Triple Black">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/bmw-r1300gs-adventure-triple-black.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <!-- KTM -->
       <div class="product-card">
-        <div class="product-image product-img-8"></div>
+        <img src="assets/bikes/ktm_1290_super_adventure.jpg" alt="KTM 1290 Super Adventure S (Black)" class="product-image">
         <h3>KTM 1290 Super Adventure S (Black)</h3>
         <p class="price">€145/day</p>
-        <button class="add-to-cart" data-name="KTM 1290 Super Adventure S Black">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/ktm-1290-super-adventure-s-black.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-9"></div>
+        <img src="assets/bikes/ktm_1290_super_adventure.jpg" alt="KTM 1290 Super Adventure S (Orange)" class="product-image">
         <h3>KTM 1290 Super Adventure S (Orange)</h3>
         <p class="price">€145/day</p>
-        <button class="add-to-cart" data-name="KTM 1290 Super Adventure S Orange">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/ktm-1290-super-adventure-s-orange.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <!-- Other bikes -->
       <div class="product-card">
-        <div class="product-image product-img-10"></div>
+        <img src="assets/bikes/bmw_f850gs.jpg" alt="BMW F850GS Adventure" class="product-image">
         <h3>BMW F850GS Adventure</h3>
         <p class="price">€130/day</p>
-        <button class="add-to-cart" data-name="BMW F850GS Adventure">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/bmw-f850gs-adventure.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-11"></div>
+        <img src="assets/bikes/yamaha_tracer_9gt.jpg" alt="Yamaha Tracer 9 GT" class="product-image">
         <h3>Yamaha Tracer 9 GT</h3>
         <p class="price">€125/day</p>
-        <button class="add-to-cart" data-name="Yamaha Tracer 9 GT">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/yamaha-tracer-9-gt.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <div class="product-card">
-        <div class="product-image product-img-12"></div>
+        <img src="assets/bikes/harley_pan_america.jpg" alt="Harley-Davidson Pan America Special 2025" class="product-image">
         <h3>Harley‑Davidson Pan America Special 2025</h3>
         <p class="price">€170/day</p>
-        <button class="add-to-cart" data-name="Harley Pan America Special 2025">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/harley-pan-america-special-2025.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
       </div>
       <!-- Category B -->
       <div class="product-card">
-        <div class="product-image product-img-13"></div>
+        <img src="assets/bikes/piaggio_mp3.jpg" alt="Piaggio MP3 (Category B)" class="product-image">
         <h3>Piaggio MP3 (Category B)</h3>
         <p class="price">€80/day</p>
-        <button class="add-to-cart" data-name="Piaggio MP3">Add to Cart</button>
+        <div class="btn-group">
+          <a href="bikes/piaggio-mp3.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
+      </div>
+
+      <!-- Coming soon bikes -->
+      <div class="product-card coming-soon">
+        <img src="assets/bikes/triumph_tiger_900_gt_pro.jpg" alt="Triumph Tiger 900 GT Pro" class="product-image">
+        <h3>Triumph Tiger 900 GT Pro</h3>
+        <p class="price">Coming Soon</p>
+        <div class="btn-group">
+          <a href="bikes/triumph-tiger-900-gt-pro.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
+      </div>
+      <div class="product-card coming-soon">
+        <img src="assets/bikes/bmw_r1250gs.jpg" alt="BMW R1250GS Triple Black" class="product-image">
+        <h3>BMW R1250GS Triple Black</h3>
+        <p class="price">Coming Soon</p>
+        <div class="btn-group">
+          <a href="bikes/bmw-r1250gs-triple-black.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
+      </div>
+      <div class="product-card coming-soon">
+        <img src="assets/bikes/ducati_multistrada_v2.jpg" alt="Ducati Multistrada V2" class="product-image">
+        <h3>Ducati Multistrada V2</h3>
+        <p class="price">Coming Soon</p>
+        <div class="btn-group">
+          <a href="bikes/ducati-multistrada-v2.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
+      </div>
+      <div class="product-card coming-soon">
+        <img src="assets/bikes/moto_guzzi_stelvio.jpg" alt="Moto Guzzi Stelvio" class="product-image">
+        <h3>Moto Guzzi Stelvio</h3>
+        <p class="price">Coming Soon</p>
+        <div class="btn-group">
+          <a href="bikes/moto-guzzi-stelvio.html" class="learn-btn">Learn More</a>
+          <a href="#schedule" class="check-btn">Check Availability</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merchandise / Gadgets -->
+  <section id="merch" class="merch">
+    <h2>Merchandise & Gadgets</h2>
+    <p>Grab a piece of the ride! Visit our dedicated shop page to browse mugs, T‑shirts, tote bags, pins and keychains.</p>
+    <p><a href="shop.html" class="cta-button">Visit the Shop</a></p>
+  </section>
+
+  <!-- Merchandise Shop -->
+  <section id="merch" class="merch">
+    <h2>Merchandise</h2>
+    <p>Take a piece of Ride Easy with you. Our limited‑run mugs, shirts, tote bags, pins and RFID keychains are perfect gifts or souvenirs.</p>
+    <div class="merch-grid">
+      <!-- Mugs -->
+      <div class="merch-card">
+        <img src="assets/merch/mug1.png" alt="Funny Coffee Mug Design 1" class="merch-image">
+        <h3>Funny Mug #1</h3>
+        <p class="price">€12</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/mug2.png" alt="Funny Coffee Mug Design 2" class="merch-image">
+        <h3>Funny Mug #2</h3>
+        <p class="price">€12</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/mug3.png" alt="Funny Coffee Mug Design 3" class="merch-image">
+        <h3>Funny Mug #3</h3>
+        <p class="price">€12</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- T‑shirts -->
+      <div class="merch-card">
+        <img src="assets/merch/tshirt1.png" alt="T‑shirt Design 1" class="merch-image">
+        <h3>T‑Shirt Design 1</h3>
+        <p class="price">€25</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/tshirt2.png" alt="T‑shirt Design 2" class="merch-image">
+        <h3>T‑Shirt Design 2</h3>
+        <p class="price">€25</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/tshirt3.png" alt="T‑shirt Design 3" class="merch-image">
+        <h3>T‑Shirt Design 3</h3>
+        <p class="price">€25</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Tote bags -->
+      <div class="merch-card">
+        <img src="assets/merch/totebag1.png" alt="Tote Bag Design 1" class="merch-image">
+        <h3>Tote Bag Design 1</h3>
+        <p class="price">€18</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/totebag2.png" alt="Tote Bag Design 2" class="merch-image">
+        <h3>Tote Bag Design 2</h3>
+        <p class="price">€18</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/totebag3.png" alt="Tote Bag Design 3" class="merch-image">
+        <h3>Tote Bag Design 3</h3>
+        <p class="price">€18</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/totebag4.png" alt="Tote Bag Design 4" class="merch-image">
+        <h3>Tote Bag Design 4</h3>
+        <p class="price">€18</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Pins -->
+      <div class="merch-card">
+        <img src="assets/merch/pin1.png" alt="Pin Design 1" class="merch-image">
+        <h3>Pin Design 1</h3>
+        <p class="price">€5</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="merch-card">
+        <img src="assets/merch/pin2.png" alt="Pin Design 2" class="merch-image">
+        <h3>Pin Design 2</h3>
+        <p class="price">€5</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Keychain -->
+      <div class="merch-card">
+        <img src="assets/merch/keychain.png" alt="Motorcycle RFID Keychain" class="merch-image">
+        <h3>RFID Keychain</h3>
+        <p class="price">€7</p>
+        <button class="add-to-cart">Add to Cart</button>
       </div>
     </div>
   </section>
@@ -234,36 +490,58 @@
     </div>
   </section>
 
+  <!-- Media -->
+  <section id="media" class="media">
+    <h2>Media</h2>
+    <p>See what we’ve been up to! Click any panel below to visit our social feeds and albums for fresh ride footage and rider stories.</p>
+    <div class="media-grid">
+      <!-- Facebook feed link -->
+      <a href="https://www.facebook.com/61576806786981" target="_blank" class="media-item media-facebook"><span>Facebook</span></a>
+      <!-- Instagram feed link -->
+      <a href="https://www.instagram.com/rideeasy.rent/" target="_blank" class="media-item media-instagram"><span>Instagram</span></a>
+      <!-- Google photo album link -->
+      <a href="https://share.google/jFfDSpmB9IrstBMwU" target="_blank" class="media-item media-google"><span>Gallery</span></a>
+    </div>
+  </section>
+
   <!-- Schedule / Booking -->
   <section id="schedule" class="schedule">
     <h2>Plan Your Ride</h2>
     <div class="schedule-container">
       <div class="calendar">
         <h3>Choose Dates and Bike</h3>
-        <label for="bike-model">Bike Model:</label>
-        <select id="bike-model">
-          <option value="" disabled selected>Select bike</option>
-          <option>Ducati Multistrada V4S Full</option>
-          <option>Ducati Multistrada V4S Travel Radar</option>
-          <option>BMW R1250GS Adventure</option>
-          <option>BMW R1300GS Trophy</option>
-          <option>BMW R1300GS Triple Black</option>
-          <option>BMW R1300GS Adventure Trophy</option>
-          <option>BMW R1300GS Adventure Triple Black</option>
-          <option>KTM 1290 Super Adventure S (Black)</option>
-          <option>KTM 1290 Super Adventure S (Orange)</option>
-          <option>BMW F850GS Adventure</option>
-          <option>Yamaha Tracer 9 GT</option>
-          <option>Harley‑Davidson Pan America Special 2025</option>
-          <option>Piaggio MP3 (Category B)</option>
-        </select>
-        <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date">
-        <label for="end-date">End Date:</label>
-        <input type="date" id="end-date">
-        <label for="request-email">Your Email:</label>
-        <input type="email" id="request-email" placeholder="you@example.com">
-        <button id="check-availability">Check Availability</button>
+        <!-- Availability form submits directly to Formsubmit to send an email -->
+        <form class="availability-form" action="https://formsubmit.co/info@ride-easy.rent" method="POST">
+          <input type="hidden" name="_subject" value="Ride Easy availability request">
+          <label for="bike-model">Bike Model:</label>
+          <select id="bike-model" name="bike">
+            <option value="" disabled selected>Select bike</option>
+            <option>Ducati Multistrada V4S Full</option>
+            <option>Ducati Multistrada V4S Travel Radar</option>
+            <option>BMW R1250GS Adventure</option>
+            <option>BMW R1300GS Trophy</option>
+            <option>BMW R1300GS Triple Black</option>
+            <option>BMW R1300GS Adventure Trophy</option>
+            <option>BMW R1300GS Adventure Triple Black</option>
+            <option>KTM 1290 Super Adventure S (Black)</option>
+            <option>KTM 1290 Super Adventure S (Orange)</option>
+            <option>BMW F850GS Adventure</option>
+            <option>Yamaha Tracer 9 GT</option>
+            <option>Harley‑Davidson Pan America Special 2025</option>
+            <option>Piaggio MP3 (Category B)</option>
+            <option>Triumph Tiger 900 GT Pro</option>
+            <option>BMW R1250GS Triple Black</option>
+            <option>Ducati Multistrada V2</option>
+            <option>Moto Guzzi Stelvio</option>
+          </select>
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" name="start-date" required>
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" name="end-date" required>
+          <label for="request-email">Your Email:</label>
+          <input type="email" id="request-email" name="email" placeholder="you@example.com" required>
+          <button type="submit" id="check-availability">Check Availability</button>
+        </form>
         <div id="date-result"></div>
       </div>
       <div class="map-placeholder">
@@ -298,7 +576,10 @@
   <section id="contact" class="contact">
     <h2>Get in Touch</h2>
     <p>Ready to start your adventure? Contact us to plan your dream ride.</p>
-    <form class="contact-form" action="mailto:info@ride-easy.rent" method="post" enctype="text/plain">
+    <p>Prefer to speak directly? Call us at <a href="tel:+48453222242">+48 453 222 242</a> or chat via <a href="https://wa.me/48453222242" target="_blank">WhatsApp</a>.</p>
+    <form class="contact-form" action="https://formsubmit.co/info@ride-easy.rent" method="POST">
+      <!-- Hidden subject line sent with each submission -->
+      <input type="hidden" name="_subject" value="Ride Easy contact form submission">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="How can we help you?" required></textarea>
@@ -311,15 +592,15 @@
     <h2>Follow Us & Find Us</h2>
     <p>Stay connected on social media or visit our Google Business profile for more reviews and updates.</p>
     <ul class="social-links">
-      <li><a href="https://www.facebook.com/ride-easy.rent" target="_blank">Facebook</a></li>
-      <li><a href="https://www.instagram.com/ride-easy.rent" target="_blank">Instagram</a></li>
-      <li><a href="https://www.google.com/search?q=RideEasy+Rent" target="_blank">Google Business</a></li>
+      <li><a href="https://www.facebook.com/61576806786981" target="_blank">Facebook</a></li>
+      <li><a href="https://www.instagram.com/rideeasy.rent/" target="_blank">Instagram</a></li>
+      <li><a href="https://share.google/jFfDSpmB9IrstBMwU" target="_blank">Google Business</a></li>
     </ul>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 RideEasy Co. All rights reserved.</p>
+    <p>&copy; 2025 Ride‑Easy.rent. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
